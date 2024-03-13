@@ -22,7 +22,7 @@ public class WebSocketEventListener {
         Object obj = accessor.getSessionAttributes().get("username");
         if(obj != null){
             String user = (String) obj;
-            Message message = new Message("1",LocalDateTime.now(), user, user, "");
+            Message message = new Message("1",LocalDateTime.now(), user, user, "", false);
             sendingOperations.convertAndSend("/topic/public", message );
 
         }
